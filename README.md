@@ -4,19 +4,21 @@ This is for creating django2 enviroment
 
 Tech stack is
 
-- python3
-
 - django2
 
 - elasticsearch
 
 - fluentd
 
+- gunicorn
+
 - kibana
 
 - nginx
 
 - postgres
+
+- python3
 
 - redis
 
