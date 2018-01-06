@@ -1,0 +1,75 @@
+version: '3.4'
+services:
+    web:
+        build: .
+        command: /usr/bin/gunicorn djangopj.wsgi:application -w 2 -b :8000
+        ports:
+            - "8000:8000"
+        links:
+            - postgres:postgres
+            - redis:redis
+        env_file: env_example
+        restart: always
+        volumes:
+            - ./djangopj:/var/www/djangopj
+
+    postgres:
+        restart: always
+        image: postgres:latest
+        volumes:
+# This data source path should be changed based on env
+            - ~/data/docker/psql:/var/lib/postgresql
+            - ./postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+            - ./backups/postgresql:/backup
+        env_file:
+            - env_example
+        expose:
+            - "5432"
+
+    redis:
+        restart: always
+        image: redis:latest
+        expose:
+            - "6379"
+
+
+    nginx:
+        image: nginx:alpine
+        links:
+            - fluentd
+            - web:web
+        ports:
+            - "80:80"
+        restart: always
+        volumes:
+            - ./djangopj:/var/www/djangopj
+            - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf
+            - ./_log/nginx:/var/log/nginx
+
+    elasticsearch:
+        image: elasticsearch
+        ports:
+            - 9200:9200
+
+    fluentd:
+        image: 1stclass/fluentd-fluent-plugin-elasticsearch
+        links:
+            - elasticsearch
+        ports:
+            - "24224:24224"
+            - "24224:24224/udp"
+        volumes:
+            - ~/data/docker/fluentd:/var/log/hoge
+            - ./fluentd/etc:/fluentd/etc
+            - ./_log/nginx:/var/log/nginx
+        depends_on:
+            - elasticsearch
+
+    kibana:
+        image: kibana
+        links:
+            - "elasticsearch"
+        ports:
+            - 5601:5601
+        depends_on:
+            - elasticsearch

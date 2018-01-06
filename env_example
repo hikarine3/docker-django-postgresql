@@ -1,0 +1,5 @@
+DB_NAME=exampleToBeEdited
+DB_USER=exampleToBeEdited
+DB_PASS=exampleToBeEdited
+DB_SERVICE=postgres
+DB_PORT=5432
