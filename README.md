@@ -26,7 +26,15 @@ DB must be separated and should not use docker version. Ideally you should use D
 
 # File which should be edited for customization
 
-Though you can edit docker/web/django/env_example, best way is to create new .env file 
+Though the system can work just by
+
+```
+git clone git@github.com:hikarine3/docker-django2.git;
+cd docker-django2;
+docker-compose up;
+```
+
+it is just default and you should do some customization after you confirmed the system work without problem.
 
 If you want to use postgresql instead of sqlite
 
@@ -45,12 +53,7 @@ vi nginx/site-enabled/default
 ```
 rm -rf djangopj/*
 ```
-
-# Prerequisistes
-
-```
-mkdir -p ~/data/docker/psql
-```
+and put django's content
 
 # How to use
 
