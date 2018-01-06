@@ -14,29 +14,46 @@ redis
 - DB must be separated and should not use docker version. Ideally you should use DBAAS
 
 # File which should be edited for customization
-## Though you can edit docker/web/django/env_example, best way is to create new .env file 
-### If you want to use postgresql instead of sqlite
+
+Though you can edit docker/web/django/env_example, best way is to create new .env file 
+
+If you want to use postgresql instead of sqlite
+
+```
 vi env_example
+```
 
+```
 vi sql/create_database.sql
+```
 
+```
 vi nginx/site-enabled/default
+```
 
-djangopj/*
+```
+rm -rf djangopj/*
+```
 
 # Prerequisistes
-mkdir -p ~/data/docker/fluentd;
+
+```
 mkdir -p ~/data/docker/psql
+```
 
 # How to use
-## For build
-docker-compose build 1stclass/django2
 
-## To start without build
+## To start
+
+```
 docker-compose up
+```
 
 # Rebuild
+
+```
 docker-compose build --no-cache
+```
 
 # URL which you can confirm
 
@@ -48,11 +65,17 @@ http://localhost/
 http://localhost:5601/
 
 # For real usage
+
 djangopj
+
 is the folder for the source code of django
 
 If you want to put your own django PJ,
+
+```
 rm -rf djangopj/*
+```
+
 and put your django PJ sour code under djangopj/
 
 # License

@@ -18,7 +18,7 @@ services:
         image: postgres:latest
         volumes:
 # This data source path should be changed based on env
-            - ~/data/docker/psql:/var/lib/postgresql
+            - ./_data/docker/psql:/var/lib/postgresql
             - ./postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
             - ./backups/postgresql:/backup
         env_file:
@@ -59,7 +59,6 @@ services:
             - "24224:24224"
             - "24224:24224/udp"
         volumes:
-            - ~/data/docker/fluentd:/var/log/hoge
             - ./fluentd/etc:/fluentd/etc
             - ./_log/nginx:/var/log/nginx
         depends_on:
