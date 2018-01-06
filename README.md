@@ -31,7 +31,7 @@ Though the system can work just by
 ```
 git clone git@github.com:hikarine3/docker-django2.git;
 cd docker-django2;
-docker-compose up;
+docker-compose up -d;
 ```
 
 it is just default and you should do some customization after you confirmed the system work without problem.
