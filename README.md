@@ -16,7 +16,7 @@ Tech stack is
 
 - nginx
 
-- postgres
+- postgresql
 
 - python3
 
