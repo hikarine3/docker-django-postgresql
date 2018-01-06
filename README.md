@@ -1,17 +1,28 @@
 # docker-django2
+
 This is for creating django2 enviroment
+
 Tech stack is
-python3
-django2
-elasticsearch
-fluentd
-kibana
-nginx
-postgres
-redis
+
+- python3
+
+- django2
+
+- elasticsearch
+
+- fluentd
+
+- kibana
+
+- nginx
+
+- postgres
+
+- redis
 
 # Consideration for production usage
-- DB must be separated and should not use docker version. Ideally you should use DBAAS
+
+DB must be separated and should not use docker version. Ideally you should use DBAAS
 
 # File which should be edited for customization
 
