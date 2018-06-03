@@ -1,4 +1,4 @@
-FROM 1stclass/python3-django2-alpine-base
+FROM 1stclass/docker-python3-django2-alpine-base
 MAINTAINER Hajime Kurita https://twitter.com/hikarine3/
 
 # Initialize
