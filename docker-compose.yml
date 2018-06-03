@@ -52,7 +52,7 @@ services:
             - 9200:9200
 
     fluentd:
-        image: 1stclass/fluentd-fluent-plugin-elasticsearch
+        image: 1stclass/docker-fluentd-fluent-plugin-elasticsearch
         links:
             - elasticsearch
         ports:
