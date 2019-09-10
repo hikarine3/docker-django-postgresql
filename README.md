@@ -52,21 +52,21 @@ MIT
 Hajime Kurita
 
 ## Twitter
-EN: https://twitter.com/hajimekurita
-JP: https://twitter.com/hikarine3
+- EN: https://twitter.com/hajimekurita
+- JP: https://twitter.com/hikarine3
 
 ## Corporation page
-EN: https://1stclass.co.jp/en/
-JP: https://1stclass.co.jp/
+- EN: https://1stclass.co.jp/en/
+- JP: https://1stclass.co.jp/
 
 # Techincoal web services
 ## VPS & Infra
-EN: https://vpsranking.com/
-JP: https://vpshikaku.com/
+- EN: https://vpsranking.com/
+- JP: https://vpshikaku.com/
 
 ## Programming
-EN: https://programminglang.com/en/
-JP: https://programminglang.com/ja/
+- EN: https://programminglang.com/en/
+- JP: https://programminglang.com/ja/
 
 ## Github
 https://github.com/hikarine3
