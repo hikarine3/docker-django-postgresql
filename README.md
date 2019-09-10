@@ -1,18 +1,12 @@
 # docker-django2
 
-This is for creating django2 enviroment
+This is for creating django2's miminum docker enviroment
 
 Tech stack is
 
 - django2
 
-- elasticsearch
-
-- fluentd
-
 - gunicorn
-
-- kibana
 
 - nginx
 
@@ -20,79 +14,37 @@ Tech stack is
 
 - python3
 
-- redis
 
-# Consideration for production usage
+You can start python's project using this docker environment for local development.
 
-DB must be separated and should not use docker version. Ideally you should use DBAAS
+And you can deploy your code to production just by synching the code or using docker same way.
 
-# File which should be edited for customization
+# How to use
 
-Though the system can work just by
-
+Just type
 ```
 git clone git@github.com:hikarine3/docker-django2.git;
 cd docker-django2;
 docker-compose up -d;
 ```
 
-it is just default and you should do some customization after you confirmed the system work without problem.
-
-If you want to use postgresql instead of sqlite
-
-```
-vi env_example
-```
-
-```
-vi sql/create_database.sql
-```
-
-```
-vi nginx/site-enabled/default
-```
-
-```
-rm -rf djangopj/*
-```
-and put django's content
-
-# How to use
-
-## To start
-
-```
-docker-compose up
-```
-
-# Rebuild
-
-```
 docker-compose build --no-cache
-```
 
-# URL which you can confirm
 
-## Web server
+for initial.
+You should be able to see web site at
 http://localhost/
 
 
-## Kibana
-http://localhost:5601/
-
-# For real usage
-
-djangopj
-
-is the folder for the source code of django
-
-If you want to put your own django PJ,
-
+For postgres, if you have installed postgresql client, you can connect　by
 ```
-rm -rf djangopj/*
+psql --user=postgres
 ```
 
-and put your django PJ sour code under djangopj/
+# Customization
+
+If you want to use postgresql instead of sqlite,
+create user on postgresql and define connection information in djangopj/djangopj/settings.py by modifying value of DATABASES=... value.
 
 # License
 
@@ -100,10 +52,25 @@ MIT
 
 # Author
 
+## Name
 Hajime Kurita
 
-An adminstrator of https://sakuhindb.com/ , http://minakoe.jp/ and so on
+## Twitter
+EN: https://twitter.com/hajimekurita
+JP: https://twitter.com/hikarine3
 
-https://twitter.com/hikarine3
+## Corporation page
+EN: https://1stclass.co.jp/en/
+JP: https://1stclass.co.jp/
 
-https://en.sakuhindb.com/pe/Administrator/
+# Techincoal web services
+## VPS & Infra
+EN: https://vpsranking.com/
+JP: https://vpshikaku.com/
+
+## Programming
+EN: https://programminglang.com/en/
+JP: https://programminglang.com/ja/
+
+## Github
+https://github.com/hikarine3
