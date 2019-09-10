@@ -27,14 +27,10 @@ git clone git@github.com:hikarine3/docker-django2.git;
 cd docker-django2;
 docker-compose up -d;
 ```
-
-docker-compose build --no-cache
-
-
 for initial.
+
 You should be able to see web site at
 http://localhost/
-
 
 For postgres, if you have installed postgresql client, you can connect　by
 ```
