@@ -21,13 +21,22 @@ And you can deploy your code to production just by synching the code or using do
 
 # How to use
 
-Just type
+
+Template is provided through
+
+https://github.com/hikarine3/docker-django2
+
+so click "Use this template" and start your project from there.
+
+Then git clone your repository to your environment and start docker.
+
+Example
+
 ```
 git clone git@github.com:hikarine3/docker-django2.git;
 cd docker-django2;
 docker-compose up -d;
 ```
-for initial.
 
 You should be able to see web site at
 http://localhost/
