@@ -1,10 +1,19 @@
-FROM 1stclass/docker-python3-django2-alpine-base:latest
-MAINTAINER Hajime Kurita https://twitter.com/hikarine3/
+FROM alpine
+MAINTAINER Hajime Kurita
 
-# Initialize
-# So if you put django's project content under $PJ (django) in default, you can make the system work
+# Setup
+RUN apk update
+RUN apk upgrade
+RUN apk add --update python3 python3-dev postgresql-client postgresql-dev build-base
+
+RUN pip3 install --upgrade pip
+RUN pip3 install django django-environ gunicorn psycopg2
+RUN apk del -r python3-dev postgresql
+
 ENV PJ djangopj
 RUN mkdir -p /var/www/$PJ
 WORKDIR /var/www/$PJ
 COPY $PJ /var/www/$PJ
 RUN mkdir -p /var/www/$PJ/static/admin
+
+ENV PYTHONUNBUFFERED 1
