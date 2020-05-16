@@ -1,4 +1,5 @@
-asgiref==3.2.3
-Django==3.0
-pytz==2019.3
-sqlparse==0.3.0
+#ASGI is a standard for Python asynchronous web apps and servers to communicate with each other, and positioned as an asynchronous successor to WSGI. 
+asgiref>=3.2.7
+Django>=3.0.6
+pytz>=2020.1
+sqlparse>=0.3.1
