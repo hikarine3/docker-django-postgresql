@@ -4,7 +4,7 @@ This is for creating django2's miminum docker enviroment
 
 Tech stack is
 
-- django2
+- django
 
 - gunicorn
 
@@ -12,8 +12,7 @@ Tech stack is
 
 - postgresql
 
-- python3
-
+- python
 
 You can start python's project using this docker environment for local development.
 
@@ -24,7 +23,7 @@ And you can deploy your code to production just by synching the code or using do
 
 Template is provided through
 
-https://github.com/hikarine3/docker-django2
+https://github.com/hikarine3/docker-django-postgresql
 
 so click "Use this template" and start your project from there.
 
@@ -33,8 +32,8 @@ Then git clone your repository to your environment and start docker.
 Example
 
 ```
-git clone git@github.com:hikarine3/docker-django2.git;
-cd docker-django2;
+git clone git@github.com:hikarine3/docker-django-postgresql.git;
+cd docker-django-postgresql;
 docker-compose up -d;
 ```
 
