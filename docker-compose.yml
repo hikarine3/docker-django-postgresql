@@ -21,6 +21,9 @@ services:
             - ./_data/docker/psql:/var/lib/postgresql
             - ./postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
             - ./backups/postgresql:/backup
+        environment:
+            - POSTGRES_PASSWORD=dockerPsqlPassword
+            - POSTGRES_USER=postgres
 
     nginx:
         image: nginx:alpine
