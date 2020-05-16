@@ -1,10 +1,10 @@
-# docker-django2
+# docker-django
 
-This is for creating django2's miminum docker enviroment
+This is for creating django's miminum docker enviroment
 
 Tech stack is
 
-- django
+- django 3.x
 
 - gunicorn
 
@@ -12,7 +12,7 @@ Tech stack is
 
 - postgresql
 
-- python
+- python 3.x
 
 You can start python's project using this docker environment for local development.
 
