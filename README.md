@@ -1,4 +1,4 @@
-# docker-django
+# docker-django-postgresql
 
 This is for creating django's miminum docker enviroment
 
@@ -40,7 +40,7 @@ docker-compose up -d;
 You should be able to see web site at
 http://localhost/
 
-For postgres, if you have installed postgresql client, you can connect　by
+For postgres, if you have installed postgresql client, you can connect to postgresql server by
 ```
 docker exec -i -t `docker ps|grep postgres:latest|awk '{print $1}'`  psql  --user postgres
 ```
@@ -49,6 +49,10 @@ docker exec -i -t `docker ps|grep postgres:latest|awk '{print $1}'`  psql  --use
 
 If you want to use postgresql instead of sqlite,
 create user on postgresql and define connection information in djangopj/djangopj/settings.py by modifying value of DATABASES=... value.
+
+# Guidance of constructing Django
+
+- JP: https://vpshikaku.com/django%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab-%e8%a8%ad%e5%ae%9a-%e9%96%8b%e7%99%ba%e6%96%b9%e6%b3%95/
 
 # License
 
@@ -67,19 +71,25 @@ Hajime Kurita
 - CN: https://www.weibo.com/hajimekurita
 
 ## Corporation page
+- CN: https://1stclass.co.jp/en/
 - EN: https://1stclass.co.jp/en/
 - JP: https://1stclass.co.jp/
 
-# Techincoal web services
-## VPS & Infra
-- EN: https://vpsranking.com/en/
+## Techincoal web services
+### VPS & Infra
 - CN: https://vpsranking.com/zh/
+- EN: https://vpsranking.com/en/
 - JP: https://vpshikaku.com/
 
-## Programming
+### Programming
 - EN: https://programminglang.com/en/
 - CN: https://programminglang.com/zh/
 - JP: https://programminglang.com/ja/
 
-## Github
-https://github.com/hikarine3
+### PSS
+- Docker: https://hub.docker.com/u/1stclass/
+- Github: https://github.com/hikarine3
+- NPM: https://www.npmjs.com/~hikarine3
+- Perl: http://search.cpan.org/~hikarine/
+- PHP: https://packagist.org/packages/hikarine3/
+- Python: https://pypi.org/user/hikarine3/
