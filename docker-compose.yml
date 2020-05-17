@@ -2,7 +2,7 @@ version: '3.4'
 services:
     web:
         build: .
-        command: /usr/bin/gunicorn djangopj.wsgi:application -w 2 -b :8000
+        command: gunicorn djangopj.wsgi:application -w 2 -b :8000
         ports:
             - "8000:8000"
         links:

@@ -1,7 +1,9 @@
 asgiref==3.2.7
 Django==3.0.6
 django-environ==0.4.5
+gpg==1.10.0
 gunicorn==20.0.4
 psycopg2==2.8.5
 pytz==2020.1
+rpm==4.14.2
 sqlparse==0.3.1

@@ -1,14 +1,24 @@
-FROM alpine
+FROM centos
 MAINTAINER Hajime Kurita
 
 # Setup
-RUN apk update
-RUN apk upgrade
-RUN apk add --update python3 python3-dev postgresql-client postgresql-dev build-base
+RUN yes | rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY*
+RUN yes | dnf install epel-release
+RUN yes | dnf update
+RUN yes | dnf install python3
+RUN yes | dnf install postgresql
+RUN yes | dnf install libpq-devel
+RUN yes | dnf install python3-devel
+RUN yes | dnf install postgresql
+RUN yes | dnf install postgresql-devel
+RUN yes | dnf install gcc
+# RUN yes | dnf install python3 python3-dev postgresql-client postgresql-dev build-base
 
 RUN pip3 install --upgrade pip
-RUN pip3 install django django-environ gunicorn psycopg2
-RUN apk del -r python3-dev postgresql
+RUN pip3 install django
+RUN pip3 install django-environ
+RUN pip3 install gunicorn
+RUN pip3 install psycopg2
 
 ENV PJ djangopj
 RUN mkdir -p /var/www/$PJ
