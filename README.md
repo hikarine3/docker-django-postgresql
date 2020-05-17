@@ -45,6 +45,11 @@ For postgres, if you have installed postgresql client, you can connect to postgr
 docker exec -i -t `docker ps|grep postgres:latest|awk '{print $1}'`  psql  --user postgres
 ```
 
+To get installed python's library list, you can get it by typing
+```
+docker exec -i -t `docker ps|grep docker-django-postgresql_web|awk '{print $1}'` pip freeze;
+```
+
 # Customization
 
 If you want to use postgresql instead of sqlite,
