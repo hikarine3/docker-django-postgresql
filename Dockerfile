@@ -12,7 +12,6 @@ RUN yes | dnf install python3-devel
 RUN yes | dnf install postgresql
 RUN yes | dnf install postgresql-devel
 RUN yes | dnf install gcc
-# RUN yes | dnf install python3 python3-dev postgresql-client postgresql-dev build-base
 
 RUN pip3 install --upgrade pip
 RUN pip3 install django

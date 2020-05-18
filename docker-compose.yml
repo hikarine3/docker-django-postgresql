@@ -2,6 +2,7 @@ version: '3.4'
 services:
     web:
         build: .
+        container_name: django_app1
         command: gunicorn djangopj.wsgi:application -w 2 -b :8000
         ports:
             - "8000:8000"
@@ -12,6 +13,7 @@ services:
             - ./djangopj:/var/www/djangopj
 
     postgres:
+        container_name: postgres1
         image: postgres:latest
         ports:
             - "5432:5432"
@@ -26,6 +28,7 @@ services:
             - POSTGRES_USER=postgres
 
     nginx:
+        container_name: nginx1
         image: nginx:alpine
         links:
             - web:web
