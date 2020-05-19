@@ -193,11 +193,11 @@ Docker's command is long, so it is recommended for you to use alias for some of 
 
 Example:
 ```
-alias dpsql="docker exec -i -t \`docker ps|grep postgres:latest|awk '{print \$1}'\`  psql  --user postgres";
+alias dpsql="docker exec -i -t \`docker ps|grep postgres_by_1stclass|awk '{print \$1}'\`  psql  --user postgres";
 ```
 
 ```
-alias dweb="docker exec -i -t \`docker ps|grep docker-django-postgresql_web|awk '{print \$1}'\`;"
+alias dweb="docker exec -i -t \`docker ps|grep django_app_by_1stclass|awk '{print \$1}'\`;"
 ```
 
 # How Django's folder was created / 既に用意されてるdjangoの開発フォルダの作られ方 / Django文件夹的创建方式
