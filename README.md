@@ -205,6 +205,8 @@ alias dweb="docker exec -i -t \`docker ps|grep docker-django-postgresql_web|awk 
 ```
 PJ=djangopj;
 django-admin startproject $PJ .;
+cd $PJ;
+python3 manage.py collectstatic;
 ```
 
 # Related technical information / 関連技術の役立ち情報 / 相关技术资料
