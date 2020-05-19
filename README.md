@@ -218,7 +218,6 @@ python3 manage.py collectstatic;
 
 - [PostgreSQLのインストール・設定・使い方](https://vpshikaku.com/postgresql%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%96%b9%e6%b3%95cent-os%e7%b3%bb%e3%81%ae%e5%a0%b4%e5%90%88/)
 
-
 # License / ライセンス / 执照
 
 MIT
@@ -236,8 +235,8 @@ Hajime Kurita
 - CN: https://www.weibo.com/hajimekurita
 
 ## Corporation page / 会社ページ / 公司页面
-- CN: https://1stclass.co.jp/en/
 - EN: https://1stclass.co.jp/en/
+- CN: https://1stclass.co.jp/zh/
 - JP: https://1stclass.co.jp/
 
 ## Blog
@@ -246,8 +245,8 @@ Hajime Kurita
 
 ## Techincoal web services / 提供してる技術関連Webサービス / Techincoal Web服务
 ### VPS & Infra comparison / VPS比較 / VPS比较
-- CN: https://vpsranking.com/zh/
 - EN: https://vpsranking.com/en/
+- CN: https://vpsranking.com/zh/
 - JP: https://vpshikaku.com/
 
 ### Programming Language Comparison / プログラミング言語比較 / 编程语言比较
