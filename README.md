@@ -210,11 +210,11 @@ django-admin startproject $PJ .;
 # Related technical information / 関連技術の役立ち情報 / 相关技术资料
 
 ## 日本語(Japanese)
-    - [Dockerのインストール・設定方法](https://vpshikaku.com/docker%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%83%bb%e8%a8%ad%e5%ae%9a%e6%96%b9%e6%b3%95/)
+- [Dockerのインストール・設定方法](https://vpshikaku.com/docker%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%83%bb%e8%a8%ad%e5%ae%9a%e6%96%b9%e6%b3%95/)
 
-    - [Djangoのインストール/設定/開発方法(Django3.x対応)](https://vpshikaku.com/django%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab-%e8%a8%ad%e5%ae%9a-%e9%96%8b%e7%99%ba%e6%96%b9%e6%b3%95/)
+- [Djangoのインストール/設定/開発方法(Django3.x対応)](https://vpshikaku.com/django%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab-%e8%a8%ad%e5%ae%9a-%e9%96%8b%e7%99%ba%e6%96%b9%e6%b3%95/)
 
-    - [PostgreSQLのインストール・設定・使い方](https://vpshikaku.com/postgresql%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%96%b9%e6%b3%95cent-os%e7%b3%bb%e3%81%ae%e5%a0%b4%e5%90%88/)
+- [PostgreSQLのインストール・設定・使い方](https://vpshikaku.com/postgresql%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%96%b9%e6%b3%95cent-os%e7%b3%bb%e3%81%ae%e5%a0%b4%e5%90%88/)
 
 
 # License / ライセンス / 执照
