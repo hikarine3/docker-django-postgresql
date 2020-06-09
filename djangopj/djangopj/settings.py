@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles'
 ]
 
 MIDDLEWARE = [
@@ -138,7 +138,8 @@ DATABASES = {
         'PORT': HOSTPORT
     }
 }
-
+INSTALLED_APPS.append('geo.apps.GeoConfig')
+LOGIN_REDIRECT_URL = '/'
 # Better for you to customize based on necessity
 # LANGUAGE_CODE = 'ja'
 # ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.helloworkplus.com']

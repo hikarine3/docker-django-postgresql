@@ -1,0 +1,29 @@
+[
+  {
+    "model": "geo.prefecture",
+    "pk": 1,
+    "fields": {
+      "name": "New York",
+      "key": "newyork",
+      "country":1
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 1,
+    "fields": {
+      "name": "New Jersey",
+      "key": "newjersey",
+      "country":1
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 1,
+    "fields": {
+      "name": "New Jersey",
+      "key": "newjersey",
+      "country":1
+    }
+  },
+]

@@ -1,8 +1,8 @@
-version: '3.4'
+version: '3.8'
 services:
     web:
         build: .
-        image: django_app_by_1stclass:1.0
+        image: django_app_by_1stclass:1.1
         container_name: django_app_by_1stclass
         command: gunicorn djangopj.wsgi:application -w 2 -b :8000
         ports:

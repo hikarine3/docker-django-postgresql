@@ -14,17 +14,29 @@ ___
 
 This will help you to start Django's development using PostgreSQL with docker envrionment support.
 
+You can start with minimum admin screen if you follow instructions in this document.
+
+<img src="doc/img/Site_administration_Django_site_admin.png" />
+
 And you can deploy your code to production just by transferring the code or using docker same way.
 
 [日本語]
 
 このレポジトリは、Djangoの開発をPostgreSQLと一緒にDocker環境で開始する為のテンプレートとして役立ちます。
 
+この文章の指示に従って設定をすれば、最低限の管理画面の中身をもった状態からスタートする事が出来ます。
+
+<img src="doc/img/Site_administration_Django_site_admin.png" />
+
 リモートサーバーでの稼働はDockerとしてのデプロイも出来るでしょうが、唯コードを本番環境に転送して設定する形でも動きます。
 
 [中文]
 
 这将帮助您使用带有docker envrionment支持的PostgreSQL开始Django的开发。
+
+如果遵循本文档中的说明，则可以从最小管理员屏幕开始。
+
+<img src="doc/img/Site_administration_Django_site_admin.png" />
 
 您可以仅通过传输代码或使用docker的相同方式将代码部署到生产环境中。
 ___
@@ -197,7 +209,7 @@ alias dpsql="docker exec -i -t \`docker ps|grep postgres_by_1stclass|awk '{print
 ```
 
 ```
-alias dweb="docker exec -i -t \`docker ps|grep django_app_by_1stclass|awk '{print \$1}'\`;"
+alias dweb="docker exec -i -t \`docker ps|grep django_app_by_1stclass|awk '{print \$1}'\`"
 ```
 
 # How Django's folder was created / 既に用意されてるdjangoの開発フォルダの作られ方 / Django文件夹的创建方式
