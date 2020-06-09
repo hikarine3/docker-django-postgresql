@@ -14,17 +14,41 @@ ___
 
 This will help you to start Django's development using PostgreSQL with docker envrionment support.
 
-You can start with minimum admin screen if you follow instructions in this document.
+In addition to binging up django system in default status, this project add some basic functions to help you to start django project.
+
+Here is the list.
+
+- Admin page
+- Listing page with pagination function as example
+- Detail page as example
+- Load data as example
+- User authentification
+- Responsive desgin
+
+<img src="doc/img/localhost.png" />
 
 <img src="doc/img/Site_administration_Django_site_admin.png" />
 
-And you can deploy your code to production just by transferring the code or using docker same way.
+"accounts" and "geo" are added applications to the default django's file structure, so if you don't need it, you can take it off by removing addtion of INSTALLED_APPS in djangopj/settings.py
 
 [日本語]
 
 このレポジトリは、Djangoの開発をPostgreSQLと一緒にDocker環境で開始する為のテンプレートとして役立ちます。
 
-この文章の指示に従って設定をすれば、最低限の管理画面の中身をもった状態からスタートする事が出来ます。
+Djangoを初期状態で起動させるだけでなく、以下の機能を追加した状態で起動させます。
+
+- 管理画面
+- 例として項目のリストページ(ページネーション機能付き)
+- 例として詳細ページ
+- 例としてデータのDBヘの取込み処理
+- ユーザー登録・ログイン・ログアウト機能
+- レスポンシブデザイン
+
+プロダクションへのデプロイは、ローカルで生成したコードを本番に転送する事でシステムを動かす事も出来ますし、Dockerとして同じように稼働させる事も出来ます。
+
+accountsとgeoがその為に追加されたアプリなので、必要なければdjangopj/settings.pyのINSTALLED_APPSから外して下さい。
+
+<img src="doc/img/localhost.png" />
 
 <img src="doc/img/Site_administration_Django_site_admin.png" />
 
@@ -34,11 +58,22 @@ And you can deploy your code to production just by transferring the code or usin
 
 这将帮助您使用带有docker envrionment支持的PostgreSQL开始Django的开发。
 
-如果遵循本文档中的说明，则可以从最小管理员屏幕开始。
+除了以默认状态启动django系统外，该项目还添加了一些基本功能来帮助您启动django项目。
+
+这是清单。
+
+-管理页面
+-以分页功能为例的列表页面
+-详细信息页面为例
+-以加载数据为例
+- 用户认证
+-响应式设计
+
+<img src="doc/img/localhost.png" />
 
 <img src="doc/img/Site_administration_Django_site_admin.png" />
 
-您可以仅通过传输代码或使用docker的相同方式将代码部署到生产环境中。
+“ accounts”和“ geo”是将应用程序添加到默认django的文件结构中，因此，如果不需要它，可以通过删除djangopj / settings.py中的INSTALLED_APPS添加来删除它
 ___
 
 ## Tech stack / 技術セット / 技术栈
@@ -47,25 +82,31 @@ ___
 
 - nginx
 
-- postgresql
+- postgresql 12
 
 [English]
 
 djangopj is default django's folder and settings.py has customization at the tail of the file to use PostgreSQL without any change for initiation.
 
-As default database of PostgreSQL, "example" is prepared. You can confirm credentials to connect to DB in docker-compose.yml and settings.py.
+As default database of PostgreSQL, "example" is prepared.
+
+You can confirm credentials to connect to DB in docker-compose.yml and settings.py.
 
 [日本語]
 
 djangopjがdjangoの初期開発用フォルダーになっています。settings.pyの末尾にはPostgreSQLを一旦は何も触らずDjangoと接続した形で使えるようにする為のカスタマイズが追加されています。
 
-Djangoが使うPostgreSQLの初期設定のデータベースはexampleという名前になっています。接続に必要な情報はdocker-compose.ymlまたはsettings.pyをご確認下さい。
+Djangoが使うPostgreSQLの初期設定のデータベースはexampleという名前になっています。
+
+接続に必要な情報はdocker-compose.ymlまたはsettings.pyをご確認下さい。
 
 [中文]
 
 djangopj是django的默认文件夹，settings.py在文件的末尾进行了自定义，以使用PostgreSQL而无需进行任何初始化更改。
 
-作为PostgreSQL的默认数据库，准备了“ example”。 您可以在docker-compose.yml和settings.py中确认凭据以连接到数据库。
+作为PostgreSQL的默认数据库，准备了“ example”。 
+
+您可以在docker-compose.yml和settings.py中确认凭据以连接到数据库。
 
 # How to use / どうやって使うか / 如何使用
 
@@ -86,27 +127,29 @@ cd docker-django-postgresql;
 docker-compose up -d;
 ```
 
-You should be able to see web site at
-http://localhost/
-
 For completion of settings, type
 ```
-docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py makemigrations;
-
 docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py migrate;
 ```
 
-Then you can see
+Then load data by typing
+```
+docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py loaddata geo/fixtures/country.json geo/fixtures/prefecture.json
+```
 
-http://localhost/admin/
+You can see demo site with data now.
 
-To create the user who can log in admin screen
+http://localhost/
+
+To create the user who can log in admin screen, type
 
 ```
 docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py createsuperuser;
 ```
 
-Then you can log in admin screen with created credentials.
+Then you can log in admin page through
+
+http://localhost/admin/
 
 [日本語]
 
@@ -124,32 +167,31 @@ cd docker-django-postgresql;
 docker-compose up -d;
 ```
 
-正常に立ち上がったら
+それから
+```
+docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py migrate;
+```
+と打ってから、デモ用データを
+```
+python3 manage.py loaddata geo/fixtures/country.json geo/fixtures/prefecture.json
+```
+と打つ事で初期データを入れる事が出来ます。
 
 http://localhost/
 
-でページの表示が確認出来る筈です。
+で正常にサイトが稼働している事を確認して下さい。
 
-それから
-```
-docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py makemigrations;
-
-docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py migrate;
-```
-
-と打つと、DjangoのDB側の設定が完了し
-
-http://localhost/admin/
-
-に正常にアクセスできるようになります。
-
-そしたらその管理画面にログインできるユーザーを作りましょう。
+それから管理画面にログインできるユーザーを作りましょう。
 
 ```
 docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py createsuperuser;
 ```
 
-これで管理画面にログイン出来るようになった筈です。
+これで管理画面
+
+http://localhost/admin/
+
+にログイン出来るようになった筈です。
 
 [中文]
 
@@ -167,10 +209,6 @@ cd docker-django-postgresql;
 docker-compose up -d;
 ```
 
-您应该可以在以下位置查看该网站
-
-http://localhost/
-
 要完成设置，请键入
 ```
 docker exec -i -t`docker ps | grep django_app_by_1stclass | awk'{print $ 1}'`python3 manage.py makemigrations;
@@ -185,10 +223,27 @@ http://localhost/admin/
 创建可以登录管理员屏幕的用户
 
 ```
-docker exec -i -t`docker ps | grep django_app_by_1stclass | awk'{print $ 1}'`python3 manage.py createsuperuser;
+docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py migrate;
 ```
 
-然后，您可以使用创建的凭据登录管理屏幕。
+然后通过键入加载数据
+```
+docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py loaddata geo/fixtures/country.json geo/fixtures/prefecture.json
+```
+
+您现在可以看到带有数据的演示站点。
+
+http://localhost/
+
+要创建可以登录管理员屏幕的用户，请键入
+```
+docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py createsuperuser;
+```
+
+然后您可以通过登录管理页面
+
+http://localhost/admin/
+
 
 # How to connect to PostgreSQL by docker / PostgreSQLへのdockerでのアクセス / 如何通过Docker连接到PostgreSQL
 ```

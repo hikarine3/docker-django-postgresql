@@ -20,4 +20,4 @@ def country_detail(request, countryKey):
   paginator = Paginator(prefecture_list, pgsz)
   page_number = request.GET.get('page')
   page_obj = paginator.get_page(page_number)
-  return render(request, 'geo/countries/detail.html', { 'page_obj': page_obj })
+  return render(request, 'geo/prefectures.html', { 'page_obj': page_obj, 'country_obj':countrySingleRecord })

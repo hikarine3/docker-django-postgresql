@@ -10,20 +10,227 @@
   },
   {
     "model": "geo.prefecture",
-    "pk": 1,
+    "pk": 2,
     "fields": {
-      "name": "New Jersey",
-      "key": "newjersey",
+      "name": "Alabama",
+      "key": "alabama",
       "country":1
     }
   },
   {
     "model": "geo.prefecture",
-    "pk": 1,
+    "pk": 3,
     "fields": {
-      "name": "New Jersey",
-      "key": "newjersey",
+      "name": "Alaska",
+      "key": "alaska",
       "country":1
     }
   },
+  {
+    "model": "geo.prefecture",
+    "pk": 4,
+    "fields": {
+      "name": "Arizona",
+      "key": "arizona",
+      "country":1
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 5,
+    "fields": {
+      "name": "Arkansas",
+      "key": "arkansas",
+      "country":1
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 6,
+    "fields": {
+      "name": "California",
+      "key": "california",
+      "country":1
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 7,
+    "fields": {
+      "name": "Colorado",
+      "key": "colorado",
+      "country":1
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 8,
+    "fields": {
+      "name": "Connecticut",
+      "key": "connecticut",
+      "country":1
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 9,
+    "fields": {
+      "name": "Delaware",
+      "key": "delaware",
+      "country":1
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 10,
+    "fields": {
+      "name": "Florida",
+      "key": "florida",
+      "country":1
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 11,
+    "fields": {
+      "name": "Georgia",
+      "key": "georgia",
+      "country":1
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 12,
+    "fields": {
+      "name": "Hawaii",
+      "key": "hawaii",
+      "country":1
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 13,
+    "fields": {
+      "name": "Idaho",
+      "key": "idaho",
+      "country":1
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 14,
+    "fields": {
+      "name": "Illinois",
+      "key": "illinois",
+      "country":1
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 15,
+    "fields": {
+      "name": "Indiana",
+      "key": "indiana",
+      "country":1
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 200,
+    "fields": {
+      "name": "Hokkaido",
+      "key": "hokkaido",
+      "country":2
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 201,
+    "fields": {
+      "name": "Aomori",
+      "key": "aomori",
+      "country":2
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 202,
+    "fields": {
+      "name": "Akita",
+      "key": "akita",
+      "country":2
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 203,
+    "fields": {
+      "name": "Iwate",
+      "key": "iwate",
+      "country":2
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 204,
+    "fields": {
+      "name": "Fukushima",
+      "key": "fukushima",
+      "country":2
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 205,
+    "fields": {
+      "name": "Ibaraki",
+      "key": "ibaraki",
+      "country":2
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 206,
+    "fields": {
+      "name": "Chiba",
+      "key": "chiba",
+      "country":2
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 207,
+    "fields": {
+      "name": "Tokyo",
+      "key": "tokyo",
+      "country":2
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 208,
+    "fields": {
+      "name": "Kanagawa",
+      "key": "kanagawa",
+      "country":2
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 300,
+    "fields": {
+      "name": "Hubei",
+      "key": "hubei",
+      "country":3
+    }
+  },
+  {
+    "model": "geo.prefecture",
+    "pk": 400,
+    "fields": {
+      "name": "Taihoku",
+      "key": "taihoku",
+      "country":4
+    }
+  }
 ]

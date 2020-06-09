@@ -6,7 +6,20 @@
 </head>
   <body>
     <div class="wrapper">
-      <header class="header">Docker Django PostgreSQL demo</header>
+      <header class="header">
+        <div class="header-logo"><a href="/">Docker Django PostgreSQL demo</a></div>
+        <div class="header-list">
+          <ul>
+            <li class="btn list-one"><a href="#"><a href="/admin/">Admin area</a></a></li>
+            {% if request.user.id %}
+              <li class="btn list-two"><a href="{% url 'logout' %}" class="logout">Log out</a></li>
+            {% else %}
+              <li class="btn list-two"><a href="/accounts/signup/">Sign up</a></li>
+              <li class="btn list-three"><a href="{% url 'login' %}" class="login">Log in</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </header>
         <aside class="sidebar">Sidebar</aside>
         <article class="content">
             {% block content %}{% endblock %}

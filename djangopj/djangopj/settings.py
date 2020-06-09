@@ -138,8 +138,6 @@ DATABASES = {
         'PORT': HOSTPORT
     }
 }
-INSTALLED_APPS.append('geo.apps.GeoConfig')
-INSTALLED_APPS.append('accounts.apps.AccountsConfig')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -155,6 +153,14 @@ TEMPLATES = [
         },
     },
 ]
+LOGIN_REDIRECT_URL = '/'
+INSTALLED_APPS.append('geo.apps.GeoConfig')
+INSTALLED_APPS.append('accounts.apps.AccountsConfig')
+
+# For production purpose, customize this part
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+
 # Better for you to customize based on necessity
 # LANGUAGE_CODE = 'ja'
 # ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.helloworkplus.com']

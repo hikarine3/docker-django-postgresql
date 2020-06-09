@@ -1,11 +1,34 @@
+
+* {
+  margin: 0;
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
+
 
 body {
   margin: 40px;
   font-family: 'Open Sans', 'sans-serif';
   background-color: #000033;
+}
+
+.header{
+  margin: 0;
+  padding: 0;
+}
+
+.header-logo {
+  float: left;
+}
+
+.header-list {
+  float: right;
+}
+
+.header-list ul li{ 	
+  display: inline;
 }
 
 h1, p {

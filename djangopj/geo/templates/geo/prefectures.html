@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Prefectures list</h1>
+<h1>Prefectures list of {{ country_obj.name }}</h1>
 
 {% if page_obj %}
 <ul>
@@ -12,7 +12,7 @@
 {% else %}
 No states information for this country.
 {% endif %}
- 
+
 <div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}

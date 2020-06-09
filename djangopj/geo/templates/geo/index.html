@@ -2,22 +2,10 @@
 
 {% block content %}
 <h1>Country list</h1>
-This is demo page which lists countries and some of states/preferectures in USA &amp; Japan.<br />
-You can see<br />
-<ul>
-    <li>How application is added</li>
-    <li>How user login system is implemented</li>
-    <li>How pagination is implemented</li>
-    <li>How common design for pages are implemented</li>
-    <li>How initial data can be maded</li>
-    <li>How the models can be created and how the data can be gotten through ORM</li>
-</ul>
-throgh this app.
-
 {% if page_obj %}
     <ul>
     {% for country in page_obj %}
-        <li><a href="/geo/countries/{{ country.key }}/">{{ country.name }}</a></li>
+        <li><a href="/countries/{{ country.key }}/">{{ country.name }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
@@ -48,11 +36,4 @@ dweb python3 manage.py loaddata geo/fixtures/state.json;
         {% endif %}
     </span>
 </div>
-<hr />
-<h2>Others</h2>
-<ul>
-<li><a href="/admin/">Admin page</a></li>
-<li><a href="/accounts/login/">Log in</a></li>
-<li><a href="/accounts/signup/">Sign up</a></li>
-</ul>
 {% endblock %}

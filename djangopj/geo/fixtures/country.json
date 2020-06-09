@@ -19,88 +19,16 @@
     "model": "geo.country",
     "pk": 3,
     "fields": {
-      "name": "United Kingdom",
-      "key": "uk"
-    }
-  },
-  {
-    "model": "geo.country",
-    "pk": 4,
-    "fields": {
-      "name": "Italy",
-      "key": "it"
-    }
-  },
-  {
-    "model": "geo.country",
-    "pk": 5,
-    "fields": {
-      "name": "Germany",
-      "key": "de"
-    }
-  },
-  {
-    "model": "geo.country",
-    "pk": 6,
-    "fields": {
-      "name": "France",
-      "key": "fc"
-    }
-  },
-  {
-    "model": "geo.country",
-    "pk": 7,
-    "fields": {
-      "name": "Spanish",
-      "key": "es"
-    }
-  },
-  {
-    "model": "geo.country",
-    "pk": 8,
-    "fields": {
-      "name": "Brazil",
-      "key": "br"
-    }
-  },
-  {
-    "model": "geo.country",
-    "pk": 9,
-    "fields": {
-      "name": "Turkey",
-      "key": "tk"
-    }
-  },
-  {
-    "model": "geo.country",
-    "pk": 10,
-    "fields": {
       "name": "China",
       "key": "cn"
     }
   },
   {
     "model": "geo.country",
-    "pk": 11,
+    "pk": 4,
     "fields": {
-      "name": "Israel",
-      "key": "is"
-    }
-  },
-  {
-    "model": "geo.country",
-    "pk": 12,
-    "fields": {
-      "name": "Malaysia",
-      "key": "my"
-    }
-  },
-  {
-    "model": "geo.country",
-    "pk": 13,
-    "fields": {
-      "name": "Singapore",
-      "key": "sg"
+      "name": "Taiwan",
+      "key": "tw"
     }
   }
 ]

@@ -4,3 +4,4 @@ __pycache__/
 .env
 _log
 venv
+sent_emails
