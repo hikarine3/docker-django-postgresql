@@ -20,7 +20,6 @@ Here is the list.
 
 - Admin page
 - Listing page with pagination function as example
-- Detail page as example
 - Load data as example
 - User authentification
 - Responsive desgin
@@ -39,7 +38,6 @@ Djangoを初期状態で起動させるだけでなく、以下の機能を追�
 
 - 管理画面
 - 例として項目のリストページ(ページネーション機能付き)
-- 例として詳細ページ
 - 例としてデータのDBヘの取込み処理
 - ユーザー登録・ログイン・ログアウト機能
 - レスポンシブデザイン
@@ -62,12 +60,11 @@ accountsとgeoがその為に追加されたアプリなので、必要なけれ
 
 这是清单。
 
--管理页面
--以分页功能为例的列表页面
--详细信息页面为例
--以加载数据为例
+- 管理页面
+- 以分页功能为例的列表页面
+- 以加载数据为例
 - 用户认证
--响应式设计
+- 响应式设计
 
 <img src="doc/img/localhost.png" />
 
