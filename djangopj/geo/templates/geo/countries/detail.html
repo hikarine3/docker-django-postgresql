@@ -1,6 +1,9 @@
-<h2>Prefectures list</h2>
+{% extends "base.html" %}
 
-{% if %}
+{% block content %}
+<h1>Prefectures list</h1>
+
+{% if page_obj %}
 <ul>
 {% for prefecture in page_obj %}
     <li>{{ prefecture.name }}</li>
@@ -27,3 +30,6 @@ No states information for this country.
         {% endif %}
     </span>
 </div>
+<hr />
+Go back to <a href="/">country list</a>.
+{% endblock %}

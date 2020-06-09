@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'common/css/base.css' %}">
+</head>
+  <body>
+    <div class="wrapper">
+      <header class="header">Docker Django PostgreSQL demo</header>
+        <aside class="sidebar">Sidebar</aside>
+        <article class="content">
+            {% block content %}{% endblock %}
+        </article>
+      <footer class="footer">
+        Source is available at <a href="https://github.com/hikarine3/docker-django-postgresql">github</a>
+      </footer>
+    </div>
+  </body>
+</html>

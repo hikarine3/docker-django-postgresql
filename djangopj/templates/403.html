@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}403 Forbidden{% endblock %}
+
+{% block content %}
+<section>
+    <div class="error403">
+        <h1>403 Forbidden</h1>
+    </div>
+    <p>Sorry, it appears the page you were looking for is forbidden and not accessible.</p>
+    {% if exception %}
+    <p style="color: red">{{ exception }}</p>
+    {% endif %}
+</section>
+<section>
+    <p><a href="javascript:history.back()">&lt; Back</a></p>
+</section>
+{% endblock %}

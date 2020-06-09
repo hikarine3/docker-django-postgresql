@@ -5,6 +5,5 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='geo_index'),
-    path('countries/<slug:countryKey>/', views.country_detail, name='country_detail'),
-    path('accounts/', include('django.contrib.auth.urls'))
+    path('countries/<slug:countryKey>/', views.country_detail, name='country_detail')
 ]

@@ -1,4 +1,19 @@
-<h2>Country list</h2>
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Country list</h1>
+This is demo page which lists countries and some of states/preferectures in USA &amp; Japan.<br />
+You can see<br />
+<ul>
+    <li>How application is added</li>
+    <li>How user login system is implemented</li>
+    <li>How pagination is implemented</li>
+    <li>How common design for pages are implemented</li>
+    <li>How initial data can be maded</li>
+    <li>How the models can be created and how the data can be gotten through ORM</li>
+</ul>
+throgh this app.
+
 {% if page_obj %}
     <ul>
     {% for country in page_obj %}
@@ -6,7 +21,14 @@
     {% endfor %}
     </ul>
 {% else %}
-    <p>No countries are available.</p>
+    <p>No countries are available.<br />
+Please follow instructions of README.md to import default data.<br />
+ex.
+<pre>
+dweb python3 manage.py loaddata geo/fixtures/country.json;
+dweb python3 manage.py loaddata geo/fixtures/state.json;
+</pre>
+    </p>
 {% endif %}
  
 <div class="pagination">
@@ -26,3 +48,11 @@
         {% endif %}
     </span>
 </div>
+<hr />
+<h2>Others</h2>
+<ul>
+<li><a href="/admin/">Admin page</a></li>
+<li><a href="/accounts/login/">Log in</a></li>
+<li><a href="/accounts/signup/">Sign up</a></li>
+</ul>
+{% endblock %}

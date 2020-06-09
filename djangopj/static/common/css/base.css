@@ -1,0 +1,59 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 40px;
+  font-family: 'Open Sans', 'sans-serif';
+  background-color: #000033;
+}
+
+h1, p {
+  margin: 0 0 1em 0;
+}
+
+.wrapper {
+  max-width: 1020px;
+  margin: 0 20px;
+  display: grid;
+  grid-gap: 10px;
+}
+
+.wrapper > * {
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+  margin-bottom: 10px;
+}
+
+@supports (display: grid) {
+  .wrapper > * {
+    width: auto;
+    margin: 0;
+  }
+}
+
+
+@media screen and (min-width: 980px) {
+  margin: 0px;
+  .sidebar {
+    float: left;
+    width: 19.1489%;
+  }
+
+  .content {
+    float: right;
+    width: 100%;
+  }
+
+  .wrapper {
+    margin: 0 auto;
+    grid-template-columns: 1fr 3fr;
+  }
+  
+  .header, .footer {
+    grid-column: 1 / -1;
+    clear: both;
+  }
+}
