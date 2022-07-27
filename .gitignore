@@ -1,6 +1,7 @@
 .DS_Store
-__pycache__/
 *.py[cod]
+_data
 _log
+__pycache__/
 venv
 sent_emails

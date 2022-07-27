@@ -21,7 +21,7 @@ services:
         restart: always
         volumes:
 # This data source path should be changed based on env
-            - ./_data/docker/psql:/var/lib/postgresql
+            - pgdata:/var/lib/postgresql/data
             - ./postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
             - ./backups/postgresql:/backup
         environment:
@@ -41,3 +41,6 @@ services:
             - ./djangopj:/var/www/djangopj
             - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf
             - ./_log/nginx:/var/log/nginx
+
+volumes:
+    pgdata:

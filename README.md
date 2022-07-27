@@ -75,17 +75,17 @@ ___
 
 ## Tech stack / 技術セット / 技术栈
 
-- AlmaLinux adopted instead of CentOS
+- OS: AlmaLinux
 
 - django 4.x + gunicorn + python 3
 
 - nginx
 
-- postgresql 14
+- postgresql: 14
 
 [English]
 
-djangopj is default django's folder and settings.py has customization at the tail of the file to use PostgreSQL without any change for initiation.
+djangopj is default django's folder.
 
 As default database of PostgreSQL, "example" is prepared.
 
@@ -146,6 +146,9 @@ cd docker-django-postgresql;
 ```
 
 If you want to change database name and its credential, change the content of .env before bringing docker containers up.
+```
+vi .env
+```
 
 After you change .env file, 
 
@@ -163,21 +166,18 @@ Then load data by typing
 docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py loaddata geo/fixtures/country.json geo/fixtures/prefecture.json
 ```
 
-You can see demo site with data now.
-
-http://localhost/
-
-To create the user who can log in admin screen, type
+To create the user who can log in admin screen from http://localhost/admin/, type
 
 ```
 docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py createsuperuser;
 ```
 
-Then you are required to input ID, Email and password for the admin user.
+Now you can see demo site with data & a loginable user.
 
-Then you can log in admin page through
+http://localhost/
 
 http://localhost/admin/
+
 
 [日本語]
 
@@ -195,6 +195,9 @@ cd docker-django-postgresql;
 ```
 
 作成するデータベース・接続情報をデフォルトから変更したい場合には、Dockerコンテナを以下のコマンドで立ち上げる前に、.envの中身を編集しておいて下さい。
+```
+vi .env
+```
 
 編集が終わってたら
 
@@ -212,21 +215,23 @@ python3 manage.py loaddata geo/fixtures/country.json geo/fixtures/prefecture.jso
 ```
 と打つ事で初期データを入れる事が出来ます。
 
-http://localhost/
-
-で正常にサイトが稼働している事を確認して下さい。
-
-それから管理画面にログインできるユーザーを作りましょう。
+それから管理画面 http://localhost/admin/ にログインできるユーザーを作りましょう。
 
 ```
 docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py createsuperuser;
 ```
 
-これで管理画面
+あとは、
+
+http://localhost/
+
+と
 
 http://localhost/admin/
 
-にログイン出来るようになった筈です。
+を確認して、正常にサイトが稼働している事を確認して下さい。
+
+
 
 [中文]
 
@@ -244,6 +249,9 @@ cd docker-django-postgresql;
 ```
 
 如果要更改数据库名称及其凭据，请在启动 docker 容器之前更改 .env 的内容。
+```
+vi .env
+```
 
 更改 .env 文件后，
 
@@ -253,14 +261,8 @@ docker-compose up -d;
 
 要完成设置，请键入
 ```
-docker exec -i -t`docker ps | grep django_app_by_1stclass | awk'{print $ 1}'`python3 manage.py makemigrations;
-
-docker exec -i -t`docker ps | grep django_app_by_1stclass | awk'{print $ 1}'`python3 manage.py migration;
+docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py migrate;
 ```
-
-然后你可以看到
-
-http://localhost/admin/
 
 创建可以登录管理员屏幕的用户
 
@@ -273,16 +275,14 @@ docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` pytho
 docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py loaddata geo/fixtures/country.json geo/fixtures/prefecture.json
 ```
 
-您现在可以看到带有数据的演示站点。
-
-http://localhost/
-
 要创建可以登录管理员屏幕的用户，请键入
 ```
 docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py createsuperuser;
 ```
 
-然后您可以通过登录管理页面
+现在您可以看到带有数据和可登录用户的演示站点。
+
+http://localhost/
 
 http://localhost/admin/
 
