@@ -121,13 +121,18 @@ STATIC_URL = '/static/'
 
 ########
 # Customization by ths repository
+import environ
+
+env = environ.Env()
+env.read_env('.env')
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 HOSTADDRESS = "postgres_by_1stclass"
 HOSTPORT = 5432
-DBNAME = "example"
-DBUSER = "postgres"
-DBUSERPASS = "example_password2020"
+DBNAME = env("DBNAME")
+DBUSER = env("DBUSER")
+DBUSERPASS = env("DBUSERPASS")
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',

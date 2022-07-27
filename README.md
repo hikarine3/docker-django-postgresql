@@ -75,11 +75,13 @@ ___
 
 ## Tech stack / 技術セット / 技术栈
 
-- django 3.x + gunicorn + python 3 on CentOS
+- AlmaLinux adopted instead of CentOS
+
+- django 4.x + gunicorn + python 3
 
 - nginx
 
-- postgresql 12
+- postgresql 14
 
 [English]
 
@@ -87,7 +89,15 @@ djangopj is default django's folder and settings.py has customization at the tai
 
 As default database of PostgreSQL, "example" is prepared.
 
-You can confirm credentials to connect to DB in docker-compose.yml and settings.py.
+If you want to change it, modify .env.
+
+You can confirm and change credentials to connect to DB in .env.
+
+For production usage, you must change information in .env.
+
+And it is desirable to exclude .env from the registration in git repository for security purpose.
+
+I am offering .env as registered file in git repository just as demonstration and making this work without any configuration by default.
 
 [日本語]
 
@@ -95,15 +105,27 @@ djangopjがdjangoの初期開発用フォルダーになっています。settin
 
 Djangoが使うPostgreSQLの初期設定のデータベースはexampleという名前になっています。
 
-接続に必要な情報はdocker-compose.ymlまたはsettings.pyをご確認下さい。
+接続に必要な情報は
+.env
+ファイルの中身をご確認下さい。
+
+.envの中身をdockerを立ち上げる前に変更しておけば、作られるデータベースや接続情報も独自のものにする事ができます。
+
+何も変更しないでも動く様にする為このレポジトリでは.envを用意していますが、本番運用では.envファイルはgit repositoryへの登録を外して運用する事が、セキュリティ上お勧めされます。
 
 [中文]
 
-djangopj是django的默认文件夹，settings.py在文件的末尾进行了自定义，以使用PostgreSQL而无需进行任何初始化更改。
+作为 PostgreSQL 的默认数据库，准备了“示例”。
 
-作为PostgreSQL的默认数据库，准备了“ example”。 
+如果要更改它，请修改 .env。
 
-您可以在docker-compose.yml和settings.py中确认凭据以连接到数据库。
+您可以确认和更改凭据以连接到 .env 中的数据库。
+
+对于生产用途，您必须更改 .env 中的信息。
+
+出于安全目的，最好将 .env 从 git 存储库中的注册中排除。
+
+我在 git 存储库中提供 .env 作为注册文件作为演示，默认情况下无需任何配置即可使其工作。
 
 # How to use / どうやって使うか / 如何使用
 
@@ -121,6 +143,13 @@ Then git clone your repository to your environment and start docker.
 ```
 git clone git@github.com:hikarine3/docker-django-postgresql.git;
 cd docker-django-postgresql;
+```
+
+If you want to change database name and its credential, change the content of .env before bringing docker containers up.
+
+After you change .env file, 
+
+```
 docker-compose up -d;
 ```
 
@@ -144,6 +173,8 @@ To create the user who can log in admin screen, type
 docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py createsuperuser;
 ```
 
+Then you are required to input ID, Email and password for the admin user.
+
 Then you can log in admin page through
 
 http://localhost/admin/
@@ -161,6 +192,13 @@ https://github.com/hikarine3/docker-django-postgresql
 ```
 git clone git@github.com:hikarine3/docker-django-postgresql.git;
 cd docker-django-postgresql;
+```
+
+作成するデータベース・接続情報をデフォルトから変更したい場合には、Dockerコンテナを以下のコマンドで立ち上げる前に、.envの中身を編集しておいて下さい。
+
+編集が終わってたら
+
+```
 docker-compose up -d;
 ```
 
@@ -203,6 +241,13 @@ https://github.com/hikarine3/docker-django-postgresql
 ```
 git clone git@github.com：hikarine3 / docker-django-postgresql.git;
 cd docker-django-postgresql;
+```
+
+如果要更改数据库名称及其凭据，请在启动 docker 容器之前更改 .env 的内容。
+
+更改 .env 文件后，
+
+```
 docker-compose up -d;
 ```
 
@@ -276,11 +321,11 @@ python3 manage.py collectstatic;
 # Related technical information / 関連技術の役立ち情報 / 相关技术资料
 
 ## 日本語(Japanese)
-- [Dockerのインストール・設定方法](https://vpshikaku.com/docker%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%83%bb%e8%a8%ad%e5%ae%9a%e6%96%b9%e6%b3%95/)
+- [Dockerのインストール・設定方法](https://vpshikaku.com/docker/)
 
-- [Djangoのインストール/設定/開発方法(Django3.x対応)](https://vpshikaku.com/django%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab-%e8%a8%ad%e5%ae%9a-%e9%96%8b%e7%99%ba%e6%96%b9%e6%b3%95/)
+- [Djangoのインストール/設定/開発方法](https://vpshikaku.com/django/)
 
-- [PostgreSQLのインストール・設定・使い方](https://vpshikaku.com/postgresql%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%96%b9%e6%b3%95cent-os%e7%b3%bb%e3%81%ae%e5%a0%b4%e5%90%88/)
+- [PostgreSQLのインストール・設定・使い方](https://vpshikaku.com/postgresql/)
 
 # License / ライセンス / 执照
 

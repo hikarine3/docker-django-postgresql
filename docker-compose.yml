@@ -2,7 +2,7 @@ version: '3.8'
 services:
     web:
         build: .
-        image: django_app_by_1stclass:1.1
+        image: django_app_by_1stclass:1.2
         container_name: django_app_by_1stclass
         command: gunicorn djangopj.wsgi:application -w 2 -b :8000
         ports:
@@ -25,9 +25,9 @@ services:
             - ./postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
             - ./backups/postgresql:/backup
         environment:
-            - DB_NAME=example
-            - POSTGRES_USER=postgres
-            - POSTGRES_PASSWORD=example_password2020
+            - DB_NAME=${DB_NAME}
+            - POSTGRES_USER=${POSTGRES_USER}
+            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 
     nginx:
         container_name: nginx_by_1stclass
