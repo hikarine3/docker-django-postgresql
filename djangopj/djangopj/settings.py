@@ -123,8 +123,11 @@ STATIC_URL = '/static/'
 # Customization by ths repository
 import environ
 
+envfile = os.path.join(BASE_DIR, '.env')
+print(envfile)
+
 env = environ.Env()
-env.read_env('.env')
+env.read_env(envfile)
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
