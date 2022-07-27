@@ -130,9 +130,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 HOSTADDRESS = "postgres_by_1stclass"
 HOSTPORT = 5432
-DBNAME = env("DBNAME")
-DBUSER = env("DBUSER")
-DBUSERPASS = env("DBUSERPASS")
+DBNAME = env("DB_NAME")
+DBUSER = env("POSTGRES_USER")
+DBUSERPASS = env("POSTGRES_PASSWORD")
+
+LANGUAGE_CODE = env('LANGUAGE_CODE')
+TIME_ZONE = env('TIME_ZONE')
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
