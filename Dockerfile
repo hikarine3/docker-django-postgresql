@@ -16,10 +16,9 @@ RUN yes | dnf -y install postgresql-devel;
 RUN yes | dnf install gcc;
 
 RUN python3 -m pip install --user --upgrade pip
-RUN python3 -m pip install django
-RUN python3 -m pip install django-environ
-RUN python3 -m pip install gunicorn
-RUN python3 -m pip install psycopg2
+
+COPY ./requirements.txt /tmp/
+RUN python3 -m pip install -r /tmp/requirements.txt
 
 ENV PJ djangopj
 RUN mkdir -p /var/www/$PJ

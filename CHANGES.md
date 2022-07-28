@@ -1,3 +1,8 @@
+# v2.0.1
+- Force to use requirements.txt for creation of docker image instead of defining in Dockerfile
+- Use hardlink for .env instead of symbolic link consideriong deployment
+- Added not to use postgres user at the timing of creation of database
+
 # v2.0.0
 - Version up of software
   - OS: Alaminux instead of CentOS
