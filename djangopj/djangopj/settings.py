@@ -124,8 +124,6 @@ STATIC_URL = '/static/'
 import environ
 
 envfile = os.path.join(BASE_DIR, '.env')
-print(envfile)
-
 env = environ.Env()
 env.read_env(envfile)
 

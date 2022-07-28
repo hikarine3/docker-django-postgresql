@@ -1,3 +1,6 @@
+# v2.0.2
+- Removed unnecessary debug information
+
 # v2.0.1
 - Force to use requirements.txt for creation of docker image instead of defining in Dockerfile
 - Use hardlink for .env instead of symbolic link consideriong deployment
