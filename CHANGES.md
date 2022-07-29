@@ -1,3 +1,7 @@
+# v2.1.0
+- DB_HOST & DB_PORT is also parameterized using .env
+- docker-compose is now instructed to be used with --env-file=djangopj/.env
+
 # v2.0.2
 - Removed unnecessary debug information
 

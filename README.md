@@ -145,19 +145,19 @@ git clone git@github.com:hikarine3/docker-django-postgresql.git;
 cd docker-django-postgresql;
 ```
 
-If you want to change database name and its credential, change the content of .env before bringing docker containers up.
+Create djangopj/.env by copying & edting djangopj/.env_example_en for changing dbname, dbpassword and so on.
+Even if you don't create .env for your own credential, docker containers will be brought up by reading django/.env_example_en.
+
+After you edit .env file, 
 ```
-vi .env
+docker-compose --env-file=dockerpj/.env up -d;
+# If you hanve't created it, use docker-compose --env-file=dockerpj/.env_example_en up -d;
 ```
 
-After you change .env file, 
-
+For creating tables which are necessary for this system, type
 ```
-docker-compose up -d;
-```
-
-For completion of settings, type
-```
+docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py makemigrations;
+docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py showmigrations;
 docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py migrate;
 ```
 
@@ -194,19 +194,23 @@ git clone git@github.com:hikarine3/docker-django-postgresql.git;
 cd docker-django-postgresql;
 ```
 
-作成するデータベース・接続情報をデフォルトから変更したい場合には、Dockerコンテナを以下のコマンドで立ち上げる前に、.envの中身を編集しておいて下さい。
-```
-vi .env
-```
+djaongopj/.env_example_jpをコピーしてdjaongopj/.envを作って、中身を適切に編集して下さい。
+
+この設定に基づいて、データベースとその接続ユーザーが作成されます。
+
+もしもdjangopj/.envを作らない場合には、djangopj/.env_example_enが接続・DB情報として使われます。
 
 編集が終わってたら
 
 ```
-docker-compose up -d;
+docker-compose --env-file=djangopj/.env up -d;
+# djangopj/.envを作ってなければ docker-compose --env-file=djangopj/.env_example_jp up -d;
 ```
 
 それから
 ```
+docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py makemigrations;
+docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py showmigrations;
 docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py migrate;
 ```
 と打ってから、デモ用データを
@@ -248,25 +252,19 @@ git clone git@github.com：hikarine3 / docker-django-postgresql.git;
 cd docker-django-postgresql;
 ```
 
-如果要更改数据库名称及其凭据，请在启动 docker 容器之前更改 .env 的内容。
+通过复制和编辑 djangopj/.env_example_zh 创建 djangopj/.env 以更改 dbname、dbpassword 等。
+即使你没有为自己的凭证创建 .env，docker 容器也会通过阅读 django/.env_example_zh 来启动。
+
+编辑 .env 文件后，
 ```
-vi .env
+docker-compose --env-file=dockerpj/.env up -d;
+# 如果你还没有创建它，使用 docker-compose --env-file=dockerpj/.env_example_zh up -d;
 ```
 
-更改 .env 文件后，
-
+要创建此系统所需的表，请键入
 ```
-docker-compose up -d;
-```
-
-要完成设置，请键入
-```
-docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py migrate;
-```
-
-创建可以登录管理员屏幕的用户
-
-```
+docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py makemigrations;
+docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py showmigrations;
 docker exec -i -t `docker ps|grep django_app_by_1stclass|awk '{print $1}'` python3 manage.py migrate;
 ```
 

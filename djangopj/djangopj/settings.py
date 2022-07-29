@@ -129,8 +129,8 @@ env.read_env(envfile)
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-HOSTADDRESS = "postgres_by_1stclass"
-HOSTPORT = 5432
+HOSTADDRESS = env("DB_HOST")
+HOSTPORT = env("DB_PORT")
 DBNAME = env("DB_NAME")
 DBUSER = env("POSTGRES_USER")
 DBUSERPASS = env("POSTGRES_PASSWORD")
